@@ -61,11 +61,11 @@ asotobaseは、個人の「あそと」な活動を促進し、コミュニテ�
 2. **[機能要件](docs/02_FEATURES.md)** - 機能の概要とMVP範囲
 
 ### 🔍 機能詳細設計
-3. **[あそとステップ管理](docs/03_FEATURES_DETAIL_STEPS.md)** - ステップ管理機能の詳細設計
-4. **[内省ログ](docs/04_FEATURES_DETAIL_LOGS.md)** - ログ機能の詳細設計
-5. **[AIコーチング](docs/05_FEATURES_DETAIL_AI_COACHING.md)** - AIコーチング機能の詳細設計
-6. **[マッチング](docs/09_FEATURES_DETAIL_MATCHING.md)** - マッチング機能の詳細設計
-7. **[イベント・ポイント・ダッシュボード](docs/10_FEATURES_DETAIL_EVENTS_POINTS_DASHBOARD.md)** - イベント管理、ポイントシステム、ダッシュボードの詳細設計
+3. **[あそとステップ管理](docs/features-detail/01_STEPS.md)** - ステップ管理機能の詳細設計
+4. **[内省ログ](docs/features-detail/02_LOGS.md)** - ログ機能の詳細設計
+5. **[AIコーチング](docs/features-detail/03_AI_COACHING.md)** - AIコーチング機能の詳細設計
+6. **[マッチング](docs/features-detail/04_MATCHING.md)** - マッチング機能の詳細設計
+7. **[イベント・ポイント・ダッシュボード](docs/features-detail/05_EVENTS_POINTS_DASHBOARD.md)** - イベント管理、ポイントシステム、ダッシュボードの詳細設計
 
 ### 🛠️ 技術ドキュメント
 8. **[技術スタック比較](docs/06_TECH_COMPARISON.md)** - 言語・フレームワークの選定理由

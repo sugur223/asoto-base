@@ -19,14 +19,17 @@
 **現在のドキュメント構成**（読む順に番号付け）
 ```
 docs/
-├── 01_CONCEPT.md                      # コンセプト・ビジョン
-├── 02_FEATURES.md                     # 機能要件（概要）
-├── 03_FEATURES_DETAIL_STEPS.md        # あそとステップ管理の詳細
-├── 04_FEATURES_DETAIL_LOGS.md         # 内省ログ機能の詳細
-├── 05_FEATURES_DETAIL_AI_COACHING.md  # AIコーチング機能の詳細
-├── 06_TECH_COMPARISON.md              # 技術スタック比較・選定理由
-├── 07_ARCHITECTURE.md                 # システムアーキテクチャ（Python + FastAPI）
-└── 08_INFRASTRUCTURE.md               # インフラ構成・段階的移行戦略
+├── 01_CONCEPT.md                   # コンセプト・ビジョン
+├── 02_FEATURES.md                  # 機能要件（概要）
+├── 06_TECH_COMPARISON.md           # 技術スタック比較・選定理由
+├── 07_ARCHITECTURE.md              # システムアーキテクチャ（Python + FastAPI）
+├── 08_INFRASTRUCTURE.md            # インフラ構成・段階的移行戦略
+└── features-detail/                # 機能詳細設計（まとめ）
+    ├── 01_STEPS.md                 # あそとステップ管理
+    ├── 02_LOGS.md                  # 内省ログ
+    ├── 03_AI_COACHING.md           # AIコーチング
+    ├── 04_MATCHING.md              # マッチング
+    └── 05_EVENTS_POINTS_DASHBOARD.md  # イベント・ポイント・ダッシュボード
 ```
 
 **完成した詳細設計**
