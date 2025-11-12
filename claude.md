@@ -21,9 +21,9 @@
 docs/
 ├── 01_CONCEPT.md                   # コンセプト・ビジョン
 ├── 02_FEATURES.md                  # 機能要件（概要）
-├── 06_TECH_COMPARISON.md           # 技術スタック比較・選定理由
-├── 07_ARCHITECTURE.md              # システムアーキテクチャ（Python + FastAPI）
-├── 08_INFRASTRUCTURE.md            # インフラ構成・段階的移行戦略
+├── 03_TECH_COMPARISON.md           # 技術スタック比較・選定理由
+├── 04_ARCHITECTURE.md              # システムアーキテクチャ（Python + FastAPI）
+├── 05_INFRASTRUCTURE.md            # インフラ構成・段階的移行戦略
 └── features-detail/                # 機能詳細設計（まとめ）
     ├── 01_STEPS.md                 # あそとステップ管理
     ├── 02_LOGS.md                  # 内省ログ
