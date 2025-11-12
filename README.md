@@ -56,14 +56,21 @@ asotobaseは、個人の「あそと」な活動を促進し、コミュニテ�
 
 プロジェクトの詳細は以下のドキュメントを順番に参照してください：
 
+### 📘 基本ドキュメント
 1. **[コンセプト・ビジョン](docs/01_CONCEPT.md)** - あそとの哲学、解決する課題
 2. **[機能要件](docs/02_FEATURES.md)** - 機能の概要とMVP範囲
-3. **[機能詳細：あそとステップ](docs/03_FEATURES_DETAIL_STEPS.md)** - ステップ管理機能の詳細設計
-4. **[機能詳細：内省ログ](docs/04_FEATURES_DETAIL_LOGS.md)** - ログ機能の詳細設計
-5. **[機能詳細：AIコーチング](docs/05_FEATURES_DETAIL_AI_COACHING.md)** - AIコーチング機能の詳細設計
-6. **[技術スタック比較](docs/06_TECH_COMPARISON.md)** - 言語・フレームワークの選定理由
-7. **[システムアーキテクチャ](docs/07_ARCHITECTURE.md)** - 技術スタック、ディレクトリ構成
-8. **[インフラ構成](docs/08_INFRASTRUCTURE.md)** - 段階的移行戦略、デプロイ
+
+### 🔍 機能詳細設計
+3. **[あそとステップ管理](docs/03_FEATURES_DETAIL_STEPS.md)** - ステップ管理機能の詳細設計
+4. **[内省ログ](docs/04_FEATURES_DETAIL_LOGS.md)** - ログ機能の詳細設計
+5. **[AIコーチング](docs/05_FEATURES_DETAIL_AI_COACHING.md)** - AIコーチング機能の詳細設計
+6. **[マッチング](docs/09_FEATURES_DETAIL_MATCHING.md)** - マッチング機能の詳細設計
+7. **[イベント・ポイント・ダッシュボード](docs/10_FEATURES_DETAIL_EVENTS_POINTS_DASHBOARD.md)** - イベント管理、ポイントシステム、ダッシュボードの詳細設計
+
+### 🛠️ 技術ドキュメント
+8. **[技術スタック比較](docs/06_TECH_COMPARISON.md)** - 言語・フレームワークの選定理由
+9. **[システムアーキテクチャ](docs/07_ARCHITECTURE.md)** - 技術スタック、ディレクトリ構成
+10. **[インフラ構成](docs/08_INFRASTRUCTURE.md)** - 段階的移行戦略、デプロイ
 
 ## ディレクトリ構成
 
