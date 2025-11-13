@@ -50,7 +50,23 @@ asotobaseは、個人の「あそと」な活動を促進し、コミュニテ�
 
 ## 技術スタック
 
-（TODO: 技術選定後に記載）
+### フロントエンド
+- Next.js 14 (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+
+### バックエンド
+- Python 3.11+
+- FastAPI
+- SQLAlchemy 2.0 (非同期)
+- PostgreSQL
+- Alembic (マイグレーション)
+
+### 開発環境
+- Docker & Docker Compose
+
+詳細は [システムアーキテクチャ](docs/04_ARCHITECTURE.md) を参照してください。
 
 ## ドキュメント
 
@@ -73,14 +89,42 @@ asotobaseは、個人の「あそと」な活動を促進し、コミュニテ�
 - **[イベント・ポイント・ダッシュボード](docs/features-detail/05_EVENTS_POINTS_DASHBOARD.md)** - イベント管理、ポイントシステム、ダッシュボードの詳細設計
 - **[プロジェクト管理](docs/features-detail/06_PROJECTS.md)** - プロジェクト管理機能の詳細設計
 
+## 開発環境セットアップ
+
+詳細なセットアップ手順は [SETUP.md](SETUP.md) を参照してください。
+
+### クイックスタート
+
+```bash
+# リポジトリをクローン
+git clone <repository-url>
+cd asoto-base
+
+# Docker Composeでサービス起動
+docker-compose up -d
+
+# データベースマイグレーション
+docker-compose exec backend alembic revision --autogenerate -m "Initial migration"
+docker-compose exec backend alembic upgrade head
+```
+
+- フロントエンド: http://localhost:3000
+- バックエンドAPI: http://localhost:8000/docs
+
 ## ディレクトリ構成
 
 ```
 asoto-base/
 ├── docs/              # ドキュメント（番号順に読む）
-├── frontend/          # フロントエンドアプリケーション
-├── backend/           # バックエンドAPI
-└── infrastructure/    # インフラ設定
+├── backend/           # FastAPI バックエンド
+│   ├── app/           # アプリケーションコード
+│   ├── alembic/       # マイグレーション
+│   └── requirements.txt
+├── frontend/          # Next.js フロントエンド
+│   ├── src/           # ソースコード
+│   └── package.json
+├── docker-compose.yml # ローカル開発環境
+└── SETUP.md           # セットアップガイド
 ```
 
 ## ライセンス

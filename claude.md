@@ -24,6 +24,10 @@ docs/
 ├── 03_TECH_COMPARISON.md           # 技術スタック比較・選定理由
 ├── 04_ARCHITECTURE.md              # システムアーキテクチャ（Python + FastAPI）
 ├── 05_INFRASTRUCTURE.md            # インフラ構成・段階的移行戦略
+├── 06_MVP_PLAN.md                  # MVP実装計画
+├── 07_DATABASE_SCHEMA.md           # データベーススキーマ設計
+├── 08_TESTING_STRATEGY.md          # テスト戦略・TDD開発方針
+├── 09_API_TESTING_GUIDE.md         # API仕様・テスト実行ガイド
 └── features-detail/                # 機能詳細設計（まとめ）
     ├── 01_STEPS.md                 # あそとステップ管理
     ├── 02_LOGS.md                  # 内省ログ
@@ -104,12 +108,30 @@ docs/
 - 認証を自前JWTで実装することで、Supabaseへの依存を最小化
 - ストレージ層を抽象化し、Supabase Storage → S3への切り替えを容易に
 
-## 次のステップ
+## 開発の進捗状況
 
-1. 残りの機能詳細設計（マッチング、イベント、ポイント、ダッシュボード）
-2. プロジェクト初期セットアップ
-3. データベーススキーマ実装（SQLAlchemyモデル全体）
-4. MVPの実装開始
+### ✅ 完了
+- プロジェクト初期セットアップ（backend, frontend, Docker Compose）
+- データベーススキーマ設計（Phase 1の全11テーブル）
+- SQLAlchemyモデル実装（全11テーブル）
+- Alembicマイグレーション作成・実行
+- 基本的な認証API実装（register, login, me）
+- テスト環境セットアップ（pytest, CI/CD）
+- API仕様書（Swagger UI）
+
+### 🔄 進行中
+- Phase 1のPydantic Schemas実装
+- サンプルデータスクリプト作成
+
+### 📋 次のステップ
+1. Phase 1の全スキーマを作成（goals, steps, logs, events, projects など）
+2. サンプルデータスクリプト作成
+3. あそとステップ管理API実装（TDD）
+4. 内省ログAPI実装（TDD）
+5. イベント管理API実装（TDD）
+6. プロジェクト管理API実装（TDD）
+7. ダッシュボードAPI実装
+8. ポイントシステム実装
 
 ## メモ
 
