@@ -5,9 +5,7 @@ from sqlalchemy import select
 from app.core.database import get_db
 from app.core.security import verify_password, get_password_hash, create_access_token, decode_access_token
 from app.models.user import User
-from app.schemas.user import UserCreate, UserResponse, UserLogin, Token
-from typing import Optional
-
+from app.schemas.user import UserCreate, UserResponse, Token
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login")
 
@@ -96,7 +94,7 @@ async def register(user_in: UserCreate, db: AsyncSession = Depends(get_db)):
     "/login",
     response_model=Token,
     summary="ログイン",
-    description="メールアドレスとパスワードでログインし、JWTトークンを取得します。",
+    description="メールアドレスとパスワードでログインし、OAuth2形式のフォームデータを受け付けてJWTトークンを返します。",
     responses={
         200: {
             "description": "ログイン成功",
@@ -113,12 +111,16 @@ async def register(user_in: UserCreate, db: AsyncSession = Depends(get_db)):
         400: {"description": "アカウントが無効です"}
     }
 )
-async def login(user_credentials: UserLogin, db: AsyncSession = Depends(get_db)):
+async def login(
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    db: AsyncSession = Depends(get_db)
+):
     """ログイン"""
-    result = await db.execute(select(User).filter(User.email == user_credentials.email))
+    # FastAPIのOAuth2PasswordRequestFormはusernameフィールドを使用するため、emailを設定
+    result = await db.execute(select(User).filter(User.email == form_data.username))
     user = result.scalar_one_or_none()
 
-    if not user or not verify_password(user_credentials.password, user.hashed_password):
+    if not user or not verify_password(form_data.password, user.hashed_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="メールアドレスまたはパスワードが正しくありません",

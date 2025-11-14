@@ -65,10 +65,11 @@ async def test_login(client: AsyncClient, test_user: User):
     """ログインのテスト"""
     response = await client.post(
         "/api/v1/auth/login",
-        json={
-            "email": test_user.email,
+        data={
+            "username": test_user.email,
             "password": "password123"
-        }
+        },
+        headers={"Content-Type": "application/x-www-form-urlencoded"}
     )
 
     assert response.status_code == 200
@@ -84,10 +85,11 @@ async def test_login_wrong_password(client: AsyncClient, test_user: User):
     """間違ったパスワードでのログインテスト"""
     response = await client.post(
         "/api/v1/auth/login",
-        json={
-            "email": test_user.email,
+        data={
+            "username": test_user.email,
             "password": "wrong_password"
-        }
+        },
+        headers={"Content-Type": "application/x-www-form-urlencoded"}
     )
 
     assert response.status_code == 401
@@ -100,10 +102,11 @@ async def test_login_nonexistent_user(client: AsyncClient):
     """存在しないユーザーでのログインテスト"""
     response = await client.post(
         "/api/v1/auth/login",
-        json={
-            "email": "nonexistent@example.com",
+        data={
+            "username": "nonexistent@example.com",
             "password": "password123"
-        }
+        },
+        headers={"Content-Type": "application/x-www-form-urlencoded"}
     )
 
     assert response.status_code == 401
