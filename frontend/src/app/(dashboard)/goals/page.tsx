@@ -114,11 +114,11 @@ export default function GoalsPage() {
   }, [goals]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col gap-2">
         <div>
-          <p className="text-sm text-asoto-text-muted">{user?.full_name || user?.email} さんのあそとステップ</p>
-          <h1 className="text-3xl font-bold text-asoto-text-main">目標管理</h1>
+          <p className="text-xs text-asoto-text-muted sm:text-sm">{user?.full_name || user?.email} さんのあそとステップ</p>
+          <h1 className="text-2xl font-bold text-asoto-text-main sm:text-3xl">目標管理</h1>
         </div>
           {error && (
             <div className="rounded-md border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
@@ -127,7 +127,7 @@ export default function GoalsPage() {
           )}
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
           <Card className="bg-asoto-bg-surface border-asoto-border">
             <CardHeader>
               <CardTitle>合計</CardTitle>
@@ -157,7 +157,7 @@ export default function GoalsPage() {
           </Card>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           <Card className="bg-asoto-bg-surface border-asoto-border">
             <CardHeader>
               <CardTitle>新しい目標</CardTitle>

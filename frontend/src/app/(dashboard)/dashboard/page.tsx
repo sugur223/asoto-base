@@ -4,13 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-semibold text-asoto-text-main">ダッシュボード</h1>
-        <p className="text-sm text-asoto-text-muted">日々の「あそと」を俯瞰し、軽やかに次の一歩を決めましょう。</p>
+        <h1 className="text-2xl font-semibold text-asoto-text-main sm:text-3xl">ダッシュボード</h1>
+        <p className="text-xs text-asoto-text-muted sm:text-sm">日々の「あそと」を俯瞰し、軽やかに次の一歩を決めましょう。</p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
         <Card>
           <CardHeader>
             <CardDescription>コミュニティ</CardDescription>

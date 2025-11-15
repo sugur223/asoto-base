@@ -108,14 +108,14 @@ export default function LogsPage() {
   const publicLogs = logs.filter((log) => log.visibility === 'public' && log.user_id !== user?.id);
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-asoto-text-main">内省ログ</h1>
-          <p className="text-sm text-asoto-text-muted">日々の気づきや学びを蓄積しましょう。</p>
+          <h1 className="text-2xl font-bold text-asoto-text-main sm:text-3xl">内省ログ</h1>
+          <p className="text-xs text-asoto-text-muted sm:text-sm">日々の気づきや学びを蓄積しましょう。</p>
         </div>
         <Button
-          className="rounded-full bg-asoto-primary text-white"
+          className="w-full rounded-full bg-asoto-primary text-white sm:w-auto"
           onClick={() => setShowCreateForm(!showCreateForm)}
         >
           {showCreateForm ? 'キャンセル' : '新しいログを書く'}
@@ -190,7 +190,7 @@ export default function LogsPage() {
         </Card>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
         <Card className="bg-asoto-bg-surface border-asoto-border">
           <CardHeader>
             <CardTitle>マイログ</CardTitle>

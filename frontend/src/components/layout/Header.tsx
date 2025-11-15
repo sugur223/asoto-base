@@ -11,8 +11,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Bell, Menu, LogOut, User, Settings } from 'lucide-react';
+import { Bell, LogOut, User, Settings } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { MobileSidebar } from './MobileSidebar';
 
 export function Header() {
   const { user, logout } = useAuthStore();
@@ -35,24 +36,22 @@ export function Header() {
 
   return (
     <header className="flex-shrink-0 border-b border-asoto-border bg-white">
-      <div className="flex items-center justify-between px-6 py-4 sm:px-10">
+      <div className="flex items-center justify-between px-4 py-4 sm:px-10">
         {/* 左側: モバイルメニューボタン + ページタイトル */}
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
+        <div className="flex items-center gap-3">
+          <MobileSidebar />
           <div>
-            <h1 className="text-2xl font-black text-asoto-text-main">
+            <h1 className="text-lg font-black text-asoto-text-main sm:text-2xl">
               こんにちは、{user?.full_name || 'ゲスト'}さん
             </h1>
-            <p className="text-sm text-asoto-text-muted">誰もがあそぶように、シゴトができる社会を。</p>
+            <p className="hidden text-sm text-asoto-text-muted sm:block">誰もがあそぶように、シゴトができる社会を。</p>
           </div>
         </div>
 
         {/* 右側: 通知 + ユーザーメニュー */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           {/* 通知アイコン */}
-          <Button variant="ghost" size="icon" className="relative rounded-full border border-asoto-border text-asoto-text-main hover:bg-asoto-bg-main">
+          <Button variant="ghost" size="icon" className="relative hidden rounded-full border border-asoto-border text-asoto-text-main hover:bg-asoto-bg-main sm:inline-flex">
             <Bell className="h-5 w-5" />
             <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-asoto-secondary"></span>
           </Button>
