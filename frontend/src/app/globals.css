@@ -3,8 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F0F9F4;
+  --foreground: #0F172A;
+
+  /* asotobase カラーシステム（UX最適化版） */
+  --asoto-primary: #1b44dd;       /* 深い青 - asoto.jpブランドカラー */
+  --asoto-secondary: #f7f003;     /* 鮮やかな黄色 - asoto.jpアクセント */
+  --asoto-accent: #99e505;        /* ライムグリーン - asoto.jpブランドカラー */
+  --asoto-bg-main: #f8f9fa;       /* ライトグレー - 目に優しい背景 */
+  --asoto-bg-surface: #ffffff;    /* 純白 - カード背景 */
+  --asoto-bg-accent: #f0f7ff;     /* 淡い青 - アクセント背景 */
+  --asoto-text-main: #1a1a1a;     /* ダークグレー - 読みやすい */
+  --asoto-text-muted: #6b7280;    /* ミディアムグレー - サブテキスト */
+  --asoto-border: #e5e7eb;        /* ライトグレーのボーダー */
+  --asoto-success: #10b981;       /* 落ち着いた緑 - 成功 */
+  --asoto-warning: #f59e0b;       /* オレンジ - 警告 */
+  --asoto-error: #ef4444;         /* 赤 - エラー */
+  --asoto-info: #3b82f6;          /* 青 - 情報 */
 }
 
 @media (prefers-color-scheme: dark) {
