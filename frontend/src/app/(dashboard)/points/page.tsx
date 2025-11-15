@@ -26,14 +26,12 @@ export default function PointsPage() {
 
   useEffect(() => {
     const loadPoints = async () => {
-      if (!user?.id) return;
-
       setIsLoading(true);
       setError(null);
       try {
         const [summary, history] = await Promise.all([
-          pointsApi.fetchUserPoints(user.id),
-          pointsApi.fetchUserPointsHistory(user.id),
+          pointsApi.fetchUserPoints(),
+          pointsApi.fetchUserPointsHistory(),
         ]);
         setTotalPoints(summary.total_points);
         setPointsHistory(history);
@@ -46,7 +44,7 @@ export default function PointsPage() {
     };
 
     loadPoints();
-  }, [user?.id]);
+  }, []);
 
   const recentPoints = pointsHistory.slice(0, 10);
   const thisWeekPoints = pointsHistory.filter((p) => {

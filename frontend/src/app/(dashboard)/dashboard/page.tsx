@@ -30,7 +30,7 @@ export default function DashboardPage() {
           goalsApi.fetchGoals(),
           logsApi.fetchLogs(),
           eventsApi.fetchEvents(),
-          user?.id ? pointsApi.fetchUserPoints(user.id) : Promise.resolve({ total_points: 0, recent_points: [] }),
+          pointsApi.fetchUserPoints(),
         ]);
         setGoals(goalsData.filter(g => g.status === 'active').slice(0, 3));
         setLogs(logsData.slice(0, 3));

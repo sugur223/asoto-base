@@ -11,22 +11,22 @@ export interface Point {
 }
 
 export interface PointsSummary {
+  user_id: string;
   total_points: number;
-  recent_points: Point[];
 }
 
 /**
- * ユーザーのポイント合計を取得
+ * 自分のポイント合計を取得
  */
-export async function fetchUserPoints(userId: string): Promise<PointsSummary> {
-  const response = await apiClient.get<PointsSummary>(`/users/${userId}/points`);
+export async function fetchUserPoints(): Promise<PointsSummary> {
+  const response = await apiClient.get<PointsSummary>('/users/me/points');
   return response.data;
 }
 
 /**
- * ユーザーのポイント履歴を取得
+ * 自分のポイント履歴を取得
  */
-export async function fetchUserPointsHistory(userId: string): Promise<Point[]> {
-  const response = await apiClient.get<Point[]>(`/users/${userId}/points/history`);
+export async function fetchUserPointsHistory(): Promise<Point[]> {
+  const response = await apiClient.get<Point[]>('/users/me/points/history');
   return response.data;
 }
