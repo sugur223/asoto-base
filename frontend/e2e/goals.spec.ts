@@ -17,14 +17,14 @@ test.describe('目標管理（Goals）', () => {
 
   test('目標一覧ページが表示される', async ({ page }) => {
     await expect(page.getByRole('heading', { name: /目標管理/i })).toBeVisible();
-    await expect(page.getByRole('button', { name: /新しい目標を作成/i })).toBeVisible();
+    // 統計カードを確認
+    await expect(page.getByText(/合計/i).first()).toBeVisible();
+    await expect(page.getByText(/進行中/i).first()).toBeVisible();
+    await expect(page.getByText(/完了/i).first()).toBeVisible();
   });
 
   test('新しい目標を作成できる', async ({ page }) => {
-    // 新規作成ボタンをクリック
-    await page.getByRole('button', { name: /新しい目標を作成/i }).click();
-
-    // フォームが表示されることを確認
+    // フォームが既に表示されていることを確認
     await expect(page.getByLabel(/タイトル/i)).toBeVisible();
 
     // 目標を入力
@@ -37,7 +37,7 @@ test.describe('目標管理（Goals）', () => {
     }
 
     // 保存ボタンをクリック
-    await page.getByRole('button', { name: /保存|作成/i }).click();
+    await page.getByRole('button', { name: /目標を追加/i }).click();
 
     // 目標が一覧に表示されることを確認
     await expect(page.getByText('E2Eテスト目標')).toBeVisible();
