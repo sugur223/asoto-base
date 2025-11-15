@@ -22,7 +22,7 @@ class PointResponse(PointBase):
     """ポイントレスポンススキーマ"""
     id: UUID
     user_id: UUID
-    earned_at: datetime
+    created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
 

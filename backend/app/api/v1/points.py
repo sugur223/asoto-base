@@ -55,12 +55,12 @@ async def get_my_points_history(
     - **action_type**: アクションタイプ（step_complete, log_create など）
     - **reference_id**: 関連ID（目標ID、ログIDなど）
     - **description**: 説明
-    - **earned_at**: 獲得日時
+    - **created_at**: 獲得日時
     """
     result = await db.execute(
         select(Point)
         .where(Point.user_id == current_user.id)
-        .order_by(desc(Point.earned_at))
+        .order_by(desc(Point.created_at))
         .limit(100)
     )
     points = result.scalars().all()
