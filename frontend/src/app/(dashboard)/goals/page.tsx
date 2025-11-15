@@ -114,21 +114,20 @@ export default function GoalsPage() {
   }, [goals]);
 
   return (
-    <div className="min-h-screen bg-asoto-bg-main p-8">
-      <div className="max-w-6xl mx-auto space-y-8">
-        <div className="flex flex-col gap-2">
-          <div>
-            <p className="text-sm text-asoto-text-muted">{user?.full_name || user?.email} さんのあそとステップ</p>
-            <h1 className="text-3xl font-bold text-asoto-text-main">目標管理</h1>
-          </div>
+    <div className="space-y-6">
+      <div className="flex flex-col gap-2">
+        <div>
+          <p className="text-sm text-asoto-text-muted">{user?.full_name || user?.email} さんのあそとステップ</p>
+          <h1 className="text-3xl font-bold text-asoto-text-main">目標管理</h1>
+        </div>
           {error && (
             <div className="rounded-md border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
               {error}
             </div>
           )}
-        </div>
+      </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3">
           <Card className="bg-asoto-bg-surface border-asoto-border">
             <CardHeader>
               <CardTitle>合計</CardTitle>
@@ -156,9 +155,9 @@ export default function GoalsPage() {
               <p className="text-3xl font-bold text-asoto-accent">{summary.completed}</p>
             </CardContent>
           </Card>
-        </div>
+      </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
           <Card className="bg-asoto-bg-surface border-asoto-border">
             <CardHeader>
               <CardTitle>新しい目標</CardTitle>
@@ -289,7 +288,6 @@ export default function GoalsPage() {
               )}
             </CardContent>
           </Card>
-        </div>
       </div>
     </div>
   );
