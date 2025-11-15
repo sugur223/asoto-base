@@ -48,7 +48,8 @@ ENV/
 
 # Logs
 *.log
-logs/
+/logs/
+!frontend/src/app/**/logs/
 
 # Testing
 .pytest_cache/
