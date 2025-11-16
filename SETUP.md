@@ -16,12 +16,17 @@ cd asoto-base
 
 ### 2. 環境変数ファイルの準備
 
-バックエンドとフロントエンドの環境変数ファイルは既に配置済みです。
+サンプルファイルから環境変数ファイルを作成します。
 
-- `backend/.env` - バックエンド設定
-- `frontend/.env.local` - フロントエンド設定
+```bash
+# バックエンド環境変数をコピー
+cp backend/.env.example backend/.env
 
-本番環境では必ず `SECRET_KEY` を変更してください。
+# フロントエンド環境変数をコピー
+cp frontend/.env.local.example frontend/.env.local
+```
+
+開発環境ではデフォルト値で動作しますが、本番環境では必ず `backend/.env` の `SECRET_KEY` を変更してください。
 
 ### 3. Docker Composeでサービスを起動
 

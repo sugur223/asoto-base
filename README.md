@@ -100,11 +100,14 @@ asotobaseは、個人の「あそと」な活動を促進し、コミュニテ�
 git clone <repository-url>
 cd asoto-base
 
+# 環境変数ファイルを作成
+cp backend/.env.example backend/.env
+cp frontend/.env.local.example frontend/.env.local
+
 # Docker Composeでサービス起動
 docker-compose up -d
 
 # データベースマイグレーション
-docker-compose exec backend alembic revision --autogenerate -m "Initial migration"
 docker-compose exec backend alembic upgrade head
 ```
 
