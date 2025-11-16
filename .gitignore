@@ -56,6 +56,8 @@ ENV/
 .coverage
 htmlcov/
 .tox/
+test-results/
+playwright-report/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -84,3 +86,7 @@ temp/
 # OS
 Thumbs.db
 .DS_Store
+
+# Claude Code
+.codex/
+.playwright-mcp/
